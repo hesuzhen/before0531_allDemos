@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Hello.iml" filepath="$PROJECT_DIR$/Hello.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson/lesson.iml" filepath="$PROJECT_DIR$/lesson/lesson.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson0522day18/lesson0522day18.iml" filepath="$PROJECT_DIR$/lesson0522day18/lesson0522day18.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson0523day19/lesson0523day19.iml" filepath="$PROJECT_DIR$/lesson0523day19/lesson0523day19.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson0524day20/lesson0524day20.iml" filepath="$PROJECT_DIR$/lesson0524day20/lesson0524day20.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson0525day21/lesson0525day21.iml" filepath="$PROJECT_DIR$/lesson0525day21/lesson0525day21.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson0526day22/lesson0526day22.iml" filepath="$PROJECT_DIR$/lesson0526day22/lesson0526day22.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson0529day23/lesson0529day23.iml" filepath="$PROJECT_DIR$/lesson0529day23/lesson0529day23.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lesson0530day24/lesson0530day24.iml" filepath="$PROJECT_DIR$/lesson0530day24/lesson0530day24.iml" />
+    </modules>
+  </component>
+</project>

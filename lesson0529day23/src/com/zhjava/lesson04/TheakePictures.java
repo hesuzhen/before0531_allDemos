@@ -1,0 +1,6 @@
+package com.zhjava.lesson04;
+
+public interface TheakePictures {
+    //’’œ‡
+    void takePictures();
+}
