@@ -38,7 +38,7 @@ public class Test01 {
     *                   i.next();找到集合空间存放的某一个值
     *               while(hasNext()){
     *                   System.out.println(i.next());
-    *               }
+    *           1.3 next():指向下一个位置，并返回指针指向的下一个位置的值
     *       2、foreach
     *           foreach(集合内容的数据类型 形参变量:要遍历的集合对象){
     *               System.out.println(i.next());
@@ -65,7 +65,12 @@ public class Test01 {
     *                   查询效率相对单向链表较快，比数组慢
     *   7、问题
     *       迭代器是啥？作用只能发挥一次？我下次再遍历，还得重新弄个迭代器对象？
+    *           每次遍历都需要返回一个新的迭代器对象，
+    *           因为只有重新创建一个迭代器对象，指针才能从上一个循环的最后一个空位置复位到集合空间的最上面
+    *           如果上面已经用了循环遍历了，那么再次去用这个迭代器对象遍历同样的集合的话，他的开始位置是从上一次最后为空的位置开始的
     *       next()方法是啥作用
+    *           指向下一个位置，并且返回下一个指向的值
+    *
     *
     * */
     public static void main(String[] args) {
@@ -81,6 +86,7 @@ public class Test01 {
         coll.addAll(coll1);
         System.out.println(coll.size());
         System.out.println("合并coll1后的内容："+coll);
+
         System.out.println("===========迭代器：for=============");
         //遍历集合中的内容
         //1、迭代器遍历
@@ -89,6 +95,7 @@ public class Test01 {
         for (int j = 0; j <coll.size() ; j++) {
             System.out.println(i.next());
         }
+
         System.out.println("============迭代器：while=============");
         //1.2 while遍历，常用，因为有hasNext方法
         //hasNext():判断下一个是否有值
@@ -97,10 +104,32 @@ public class Test01 {
             //有值就执行
             System.out.println(ii.next());
         }
+
         System.out.println("============foreach遍历================");
         //把集合coll中第一个值赋值给变量o,然后遍历一次，知道遍历完这个集合
         for (Object o:coll) {
             System.out.println(o);
+        }
+
+        //用迭代器可能会出现的问题 1
+        /*System.out.println("============用迭代器可能出现的问题 1 ================");
+        while(coll.iterator().hasNext()){
+            System.out.println(coll.iterator().next());
+        }*/
+
+        /*
+        * 发现出现了死循环，一直打印第一行的内容
+        * 就是因为coll.iterator每次都重新创建了一个迭代器对象，每次指针都跑到集合空间的最上面
+        * 所以每次都指向下一个不为空的值
+        * */
+
+        //用迭代器可能会出现的问题 2
+        System.out.println("============用迭代器可能出现的问题 2 ================");
+        Iterator iii = coll.iterator();
+        while(iii.next()!=null){
+            //判断不为null之后，指针才会指向不为null的值
+            System.out.println(iii.next());
+            //输出之后，才会把指针指向输出的值的那个地方
         }
     }
 }
